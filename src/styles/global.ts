@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     --orange-light: #f8c894;
 
     --text-black: #343436;
+    --text-light: #666260;
 
     --shape: #ffffff;
   }

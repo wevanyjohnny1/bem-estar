@@ -21,7 +21,6 @@ export function Body() {
           </Title>
           <Subtitle>
             Fornecemos novos métodos de psicoterapia e serviços
-            psiquiátricos excepcionais, eficazes e gratificantes
             para indivíduos, casais e famílias
           </Subtitle>
           <ButtonBox>
