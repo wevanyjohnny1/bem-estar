@@ -32,8 +32,10 @@ export const Title = styled.strong`
   text-align: center;
 `;
 
-export const Subtitle = styled.h4`
+export const Subtitle = styled.strong`
+  display: flex;
   text-align: center;
   margin-top: 0.8rem;
+  font-size: 1rem;
   font-weight: normal;
 `;

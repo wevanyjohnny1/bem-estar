@@ -31,12 +31,13 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h4`
-  margin: 2rem 3rem;
+  margin: 2rem 4rem;
   text-align: justify;
   color: var(--text-black);
   opacity: 0.7;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  line-height: 30px;
 `;
 
 export const ButtonBox = styled.div`
