@@ -12,6 +12,8 @@ export const GlobalStyle = createGlobalStyle`
     --green-light: #e2f1e4;
     --orange-light: #f8c894;
 
+    --error: #c53030;
+
     --text-black: #343436;
     --text-light: #666260;
 

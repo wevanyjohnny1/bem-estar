@@ -1,17 +1,18 @@
-import { Body } from "./components/Body";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { SignUp } from "./components/SignUp";
 import { GlobalStyle } from "./styles/global";
+
+import { BrowserRouter } from 'react-router-dom';
+
+import Routes from './routes';
+
+import { AuthProvider } from './context/AuthContext';
 
 export function App() {
   return (
-    <>
-      <SignUp />
-      {/* <Header />
-      <Body />
-      <Footer /> */}
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
       <GlobalStyle />
-    </>
+    </BrowserRouter>
   );
 }

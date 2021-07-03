@@ -96,3 +96,7 @@ export const CallButton = styled.div`
     opacity: 0.7;
   }
 `;
+
+export const ContainerBox = styled.div``;
+
+export const HeaderBox = styled.div``;

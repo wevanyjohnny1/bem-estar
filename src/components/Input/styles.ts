@@ -1,6 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface IContainerProps {
+  isErroed: boolean;
+}
+
+export const Container = styled.div<IContainerProps>`
+  ${(props) =>
+    props.isErroed &&
+    css`
+        color: var(--error);
+      `
+  }
+
   display: flex;
   align-items: center;
   background-color: var(--yellow);
@@ -8,7 +19,7 @@ export const Container = styled.div`
   border: 2px solid;
   border-color: var(--orange-light);
   padding: 1rem;
-  width: 100%;
+  width: 19rem;
 
   // a partir da segunda div
   & + div {
@@ -28,5 +39,6 @@ export const Container = styled.div`
     }
 
     
+  
   }
 `;

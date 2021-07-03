@@ -1,6 +1,15 @@
+import { useContext, useEffect } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+import { Link } from 'react-router-dom';
 import { Container, Content, LogoBox, HeaderBox } from "./styles";
+import { api } from '../../services/api';
 
 export function Header() {
+  useEffect(() => {
+    api.get('signup')
+      .then(response => console.log(response.data))
+  }, []);
+
   return (
     <Container>
       <Content>
@@ -14,9 +23,11 @@ export function Header() {
           <a href="b">Planos parceiros</a>
           <a href="c">Nossa equipe</a>
         </HeaderBox>
-        <button type="button">
-          Entrar
+        <Link to="/signup">
+          <button type="button">
+            Entrar
         </button>
+        </Link>
       </Content>
     </Container>
   )

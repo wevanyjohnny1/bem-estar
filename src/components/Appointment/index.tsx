@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState, useEffect } from 'react';
+import { useCallback, useRef } from 'react';
 import {
   Container,
   HeaderContainer,
@@ -17,10 +17,9 @@ import HomeImg from '../../assets/mentalImg.png';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import Input from '../Input';
-import Button from '../Button';
+import Button from '../Button'
 
-export function SignUp() {
-  const [user, setUser] = useState([]);
+export function Appointment() {
   const formRef = useRef<FormHandles>(null);
   const handleSubmit = useCallback(async (data: object) => {
     try {
@@ -29,14 +28,12 @@ export function SignUp() {
       const schema = Yup.object().shape({
         contact: Yup.string().required('Obrigatório'),
         fullName: Yup.string().required('Obrigatório'),
-        birth: Yup.string().required('Obrigatório')
+        date: Yup.date().required('Obrigatório')
       });
 
       await schema.validate(data, {
         abortEarly: false,
       });
-
-      console.log(data);
 
     } catch (err) {
       const errors = getValidationErrors(err);
@@ -70,7 +67,7 @@ export function SignUp() {
 
               <Input name="contact" placeholder="Número ou e-mail" />
               <Input name="fullName" placeholder="Nome completo" />
-              <Input name="birth" placeholder="Data de nascimento" />
+              <Input type="date" name="birth" placeholder="Data de nascimento" />
 
               <Button type="submit">Entrar</Button>
 
