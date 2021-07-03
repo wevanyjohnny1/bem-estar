@@ -75,3 +75,12 @@ export const Content = styled.div`
     }
   }
 `;
+
+export const WelcomeBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+export const RightContent = styled.div``;

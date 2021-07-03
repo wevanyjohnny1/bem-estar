@@ -1,20 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createServer } from 'miragejs';
+import { createServer, Model } from 'miragejs';
 import { App } from './App';
 
 createServer({
+  models: {
+    user: Model,
+  },
+
+  seeds(server) {
+    server.db.loadData({
+      users: [
+        {
+          id: 1,
+          name: 'Johnny',
+          contact: 'gmail',
+          plan: 'hapvida',
+        }
+      ]
+    })
+  },
+
   routes() {
     this.namespace = 'api';
 
-    this.get('/signup', () => {
-      return [
-        {
-          contact: '1',
-          fullName: 'Johnny Wevany',
-          birth: '20/04/2000'
-        }
-      ]
+    this.get('/users', () => {
+      return this.schema.all('user')
+    })
+
+    this.post('/users', (schema, request) => {
+      const data = JSON.parse(request.requestBody)
+
+      return schema.create('user', data)
     })
   }
 })

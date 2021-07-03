@@ -1,6 +1,6 @@
-import { useContext } from 'react';
+// import { useContext } from 'react';
 import WhatsappLogo from '../../assets/whatsapp.svg';
-import { AuthContext } from '../../context/AuthContext';
+// import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import HomeImg from '../../assets/mentalImg.png';
 import {
@@ -19,7 +19,7 @@ import { Footer } from '../Footer';
 import { Header } from '../Header';
 
 export function Body() {
-  const auth = useContext(AuthContext);
+  // const auth = useContext(AuthContext);
 
   return (
     <ContainerBox>
