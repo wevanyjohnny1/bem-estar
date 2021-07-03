@@ -1,6 +1,4 @@
-// import { useContext } from 'react';
 import WhatsappLogo from '../../assets/whatsapp.svg';
-// import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import HomeImg from '../../assets/mentalImg.png';
 import {
@@ -17,9 +15,13 @@ import {
 } from './styles';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
+import { useContext } from 'react';
+import { UsersContext } from '../../context/UsersContext';
 
 export function Body() {
-  // const auth = useContext(AuthContext);
+  const { users } = useContext(UsersContext);
+
+  const userId = users.map(({ id }) => id)[0]
 
   return (
     <ContainerBox>
@@ -37,9 +39,12 @@ export function Body() {
               para indivíduos, casais e famílias
           </Subtitle>
             <ButtonBox>
-              <Link to="/appointment">
-                <button type="button">Agendar consulta</button>
-              </Link>
+              {userId &&
+                <Link to="/appointment">
+                  <button type="button">Agendar consulta</button>
+                </Link>
+              }
+
               <CallButton>
                 <ImageBox>
                   <img src={WhatsappLogo} alt="" />

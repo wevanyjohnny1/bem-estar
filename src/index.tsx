@@ -8,19 +8,6 @@ createServer({
     user: Model,
   },
 
-  seeds(server) {
-    server.db.loadData({
-      users: [
-        {
-          id: 1,
-          name: 'Johnny',
-          contact: 'gmail',
-          plan: 'hapvida',
-        }
-      ]
-    })
-  },
-
   routes() {
     this.namespace = 'api';
 

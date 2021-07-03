@@ -1,22 +1,15 @@
-import { useContext, useEffect, useState } from 'react';
-// import { AuthContext } from '../../context/AuthContext';
+import { useContext, useState } from 'react';
 import Modal from 'react-modal';
 import { Container, Content, LogoBox, HeaderBox, WelcomeBox, RightContent } from "./styles";
-import { api } from '../../services/api';
 import { SignUpModal } from '../SignUpModal';
+import { UsersContext } from '../../context/UsersContext';
 
 Modal.setAppElement('#root');
 
-interface UserProps {
-  id: number;
-  name: string;
-  contact: string;
-  plan: string;
-}
-
 export function Header() {
-  const [users, setUsers] = useState<UserProps[]>([]);
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+
+  const { users } = useContext(UsersContext);
 
   function handleOpenNewSignUpModal() {
     setIsSignUpModalOpen(true);
@@ -25,11 +18,6 @@ export function Header() {
   function handleCloseNewSignUpModal() {
     setIsSignUpModalOpen(false);
   }
-
-  useEffect(() => {
-    api.get('users')
-      .then(response => setUsers(response.data.users))
-  }, []);
 
   const userName = users.map(({ name }) => name)[0]
 

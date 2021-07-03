@@ -1,10 +1,10 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useContext } from 'react';
 import Modal from 'react-modal';
 import { FiX } from 'react-icons/fi';
 import { RiMentalHealthLine } from 'react-icons/ri';
 import { GiHealthNormal } from 'react-icons/gi';
 import { Container, UserTypeContainer, TypeBox } from './styles';
-import { api } from '../../services/api';
+import { UsersContext } from '../../context/UsersContext';
 
 interface ISignUpModalProps {
   isOpen: boolean;
@@ -12,6 +12,8 @@ interface ISignUpModalProps {
 }
 
 export function SignUpModal({ isOpen, onRequestClose }: ISignUpModalProps) {
+  const { createUser } = useContext(UsersContext);
+
   const [isPrivateActive, setPrivateIsActive] = useState(false);
   const [isPlanActive, setIsPlanActive] = useState(false);
   const [name, setName] = useState('');
@@ -26,19 +28,23 @@ export function SignUpModal({ isOpen, onRequestClose }: ISignUpModalProps) {
 
   function handleIsPlanActive() {
     setIsPlanActive(!isPlanActive);
+    setPlan('')
     setPrivateIsActive(false);
   }
 
-  function handleCreateUser(event: FormEvent) {
+  async function handleCreateUser(event: FormEvent) {
     event.preventDefault();
 
-    const user = {
+    await createUser({
       name,
       contact,
       plan
-    };
+    })
 
-    api.post('/users', user);
+    setName('')
+    setContact('')
+    setPlan('')
+    onRequestClose()
   }
 
   return (
