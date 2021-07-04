@@ -24,7 +24,11 @@ import {
 export function Body() {
   const { users } = useContext(UsersContext);
 
-  const userId = users.map(({ id }) => id)[0]
+  const userId = users.map(({ id }) => id)[0];
+
+  function show_alert() {
+    alert('Por favor entrar antes de agendar uma consulta')
+  }
 
   return (
     <ContainerBox>
@@ -43,10 +47,11 @@ export function Body() {
           </Subtitle>
             <ButtonBox>
               {
-                userId &&
+                userId ?
                 <Link to="/appointment">
                   <button type="button">Agendar consulta</button>
-                </Link>
+                </Link> :
+                <button type="button" onClick={show_alert}>Agendar consulta</button>
               }
               <CallButton>
                 <ImageBox>

@@ -4,48 +4,55 @@ const travelOne = keyframes`
   from {
     transform: translateX(-90px);
   } to {
-    transform: translateX(2000px);
+    transform: translateX(100%);
   }
 `;
 
 const travelTwo = keyframes`
   from {
-    transform: translateX(-90px);
+    transform: translateX(-70px);
+    opacity: 1;
   } to {
-    transform: translateX(2000px);
+    transform: translateX(1700px);
+    opacity: 0;
   }
 `;
 
 const travelThree = keyframes`
   from {
-    transform: translateX(-90px);
+    transform: translateX(-70px);
+    opacity: 1;
   } to {
-    transform: translateX(2000px);
-  }
+    transform: translateX(1700px);
+    opacity: 0;
 `;
 
 const travelFour = keyframes`
   from {
-    transform: translateX(2000px);
+    transform: translateX(1700px);
+    opacity: 1;
   } to {
-    transform: translateX(-90px);
-  }
+    transform: translateX(-70px);
+    opacity: 0;
 `;
 
 const travelFive = keyframes`
   from {
-    transform: translateX(2000px);
+    transform: translateX(1800px);
+    opacity: 1;
   } to {
-    transform: translateX(-90px);
+    transform: translateX(-70px);
+    opacity: 0;
   }
 `;
 
 const travelSix = keyframes`
   from {
-    transform: translateX(2000px);
+    transform: translateX(1800px);
+    opacity: 1;
   } to {
-    transform: translateX(-90px);
-  }
+    transform: translateX(-70px);
+    opacity: 0;
 `;
 
 export const Container = styled.header`
