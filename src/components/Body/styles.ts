@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.main`
   padding: 2.5rem 1rem;
@@ -6,6 +6,14 @@ export const Container = styled.main`
   margin: 0 auto;
   width: 100%;
   margin-top: -33rem;
+`;
+
+const appear = keyframes`
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
 `;
 
 export const Content = styled.div`
@@ -16,6 +24,8 @@ export const Content = styled.div`
     margin: 0 auto;
     width: 35rem;
     height: 37.5rem;
+
+    animation: ${appear} 3s;
   }
 `;
 

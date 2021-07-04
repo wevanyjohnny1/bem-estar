@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.form`
   h2 {
@@ -44,6 +44,20 @@ export const Container = styled.form`
   }
 `;
 
+const appearFromTop = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const AnimationContainer = styled.div`
+  animation: ${appearFromTop} 1s;
+`;
+
 export const UserTypeContainer = styled.div`
   margin: 1rem 0;
   display: grid;
@@ -51,12 +65,27 @@ export const UserTypeContainer = styled.div`
   gap: 0.5rem; 
 `;
 
+export const FormBox = styled.div`
+  select {
+  background-color: var(--orange-light);
+  color: var(--text-light);
+  padding: 12px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  }
+`;
+
 interface ITypeBoxProps {
   isActive: boolean;
 }
 
 export const TypeBox = styled.button<ITypeBoxProps>`
-  height: 4rem;
+    height: 4rem;
     border: 1px solid var(--yellow-medium);
     border-radius: 0.25rem;
 

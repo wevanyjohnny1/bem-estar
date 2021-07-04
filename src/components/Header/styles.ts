@@ -1,7 +1,121 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const travelOne = keyframes`
+  from {
+    transform: translateX(-90px);
+  } to {
+    transform: translateX(2000px);
+  }
+`;
+
+const travelTwo = keyframes`
+  from {
+    transform: translateX(-90px);
+  } to {
+    transform: translateX(2000px);
+  }
+`;
+
+const travelThree = keyframes`
+  from {
+    transform: translateX(-90px);
+  } to {
+    transform: translateX(2000px);
+  }
+`;
+
+const travelFour = keyframes`
+  from {
+    transform: translateX(2000px);
+  } to {
+    transform: translateX(-90px);
+  }
+`;
+
+const travelFive = keyframes`
+  from {
+    transform: translateX(2000px);
+  } to {
+    transform: translateX(-90px);
+  }
+`;
+
+const travelSix = keyframes`
+  from {
+    transform: translateX(2000px);
+  } to {
+    transform: translateX(-90px);
+  }
+`;
 
 export const Container = styled.header`
   background: var(--background);
+
+    .cloudOne {
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    margin: 5rem 5rem;
+
+    color: var(--cloud);
+
+    animation: ${travelOne} 20s linear infinite;
+    }
+
+    .cloudTwo {
+    position: absolute;
+    height: 7rem;
+    width: 7rem;
+    margin: 4rem 4rem;
+
+    color: var(--cloud);
+
+    animation: ${travelTwo} 25s linear infinite;
+    }
+
+    .cloudThree {
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    margin: 4rem 4rem;
+
+    color: var(--cloud);
+
+    animation: ${travelThree} 30s linear infinite;
+  }
+
+  .cloudFour {
+    position: absolute;
+    height: 7rem;
+    width: 7rem;
+    margin: 4rem 4rem;
+
+    color: var(--cloud);
+
+    animation: ${travelFour} 25s linear infinite;
+  }
+
+  .cloudFive {
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    margin: 4rem 4rem;
+
+    color: var(--cloud);
+
+    animation: ${travelFive} 20s linear infinite;
+  }
+
+  .cloudSix {
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    margin: 4rem 4rem;
+
+    color: var(--cloud);
+
+    animation: ${travelSix} 30s linear infinite;
+  }
 `;
 
 export const LogoBox = styled.div`

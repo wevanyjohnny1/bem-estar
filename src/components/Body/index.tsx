@@ -1,6 +1,13 @@
-import WhatsappLogo from '../../assets/whatsapp.svg';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import WhatsappLogo from '../../assets/whatsapp.svg';
 import HomeImg from '../../assets/mentalImg.png';
+
+import { Footer } from '../Footer';
+import { Header } from '../Header';
+import { UsersContext } from '../../context/UsersContext';
+
 import {
   Container,
   Content,
@@ -13,10 +20,6 @@ import {
   ContainerBox,
   HeaderBox
 } from './styles';
-import { Footer } from '../Footer';
-import { Header } from '../Header';
-import { useContext } from 'react';
-import { UsersContext } from '../../context/UsersContext';
 
 export function Body() {
   const { users } = useContext(UsersContext);
@@ -39,12 +42,12 @@ export function Body() {
               para indivíduos, casais e famílias
           </Subtitle>
             <ButtonBox>
-              {userId &&
+              {
+                userId &&
                 <Link to="/appointment">
                   <button type="button">Agendar consulta</button>
                 </Link>
               }
-
               <CallButton>
                 <ImageBox>
                   <img src={WhatsappLogo} alt="" />

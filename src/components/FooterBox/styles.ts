@@ -1,10 +1,30 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appearFromBottomOne = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const appear = keyframes`
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.main`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
   margin-top: -1rem;
+
+  animation: ${appearFromBottomOne} 3s;
 `;
 
 export const Content = styled.div`
@@ -17,6 +37,8 @@ export const Image = styled.div`
 
   align-items: center;
   justify-content: center;
+
+  animation: ${appear} 7s;
 
   img {
     height: 1.5rem;

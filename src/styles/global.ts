@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     --text-light: #666260;
 
     --shape: #ffffff;
+    --cloud: #82bcbf;
   }
 
   *{

@@ -1,10 +1,13 @@
 import { FormEvent, useState, useContext } from 'react';
 import Modal from 'react-modal';
+
 import { FiX } from 'react-icons/fi';
 import { RiMentalHealthLine } from 'react-icons/ri';
 import { GiHealthNormal } from 'react-icons/gi';
-import { Container, UserTypeContainer, TypeBox } from './styles';
+
 import { UsersContext } from '../../context/UsersContext';
+
+import { Container, UserTypeContainer, TypeBox, FormBox, AnimationContainer } from './styles';
 
 interface ISignUpModalProps {
   isOpen: boolean;
@@ -57,50 +60,53 @@ export function SignUpModal({ isOpen, onRequestClose }: ISignUpModalProps) {
       <button type="button" onClick={onRequestClose} className="react-modal-close">
         <FiX />
       </button>
-      <Container onSubmit={handleCreateUser}>
-        <h2>Cadastrar meus dados</h2>
-        <input
-          placeholder="Nome completo"
-          value={name}
-          onChange={event => setName(event.target.value)}
-        />
-        <input
-          placeholder="E-mail ou whatsapp"
-          value={contact}
-          onChange={event => setContact(event.target.value)}
-        />
-
-        <UserTypeContainer>
-          <TypeBox
-            type="button"
-            onClick={handleIsPrivateActive}
-            isActive={isPrivateActive}
-          >
-            <RiMentalHealthLine className="button-img" />
-            <span>Sou paciente particular</span>
-          </TypeBox>
-
-          <TypeBox
-            type="button"
-            onClick={handleIsPlanActive}
-            isActive={isPlanActive}
-          >
-            <GiHealthNormal className="button-img" />
-            <span>Tenho plano de saúde</span>
-          </TypeBox>
-        </UserTypeContainer>
-        {
-          isPlanActive &&
+      <AnimationContainer>
+        <Container onSubmit={handleCreateUser}>
+          <h2>Cadastrar meus dados</h2>
           <input
-            placeholder="Plano de saúde"
-            value={plan}
-            onChange={event => setPlan(event.target.value)}
+            placeholder="Nome completo"
+            value={name}
+            onChange={event => setName(event.target.value)}
           />
-        }
-        <button type="submit">
-          Cadastrar
+          <input
+            placeholder="E-mail ou whatsapp"
+            value={contact}
+            onChange={event => setContact(event.target.value)}
+          />
+
+          <UserTypeContainer>
+            <TypeBox
+              type="button"
+              onClick={handleIsPrivateActive}
+              isActive={isPrivateActive}
+            >
+              <RiMentalHealthLine className="button-img" />
+              <span>Sou paciente particular</span>
+            </TypeBox>
+
+            <TypeBox
+              type="button"
+              onClick={handleIsPlanActive}
+              isActive={isPlanActive}
+            >
+              <GiHealthNormal className="button-img" />
+              <span>Tenho plano de saúde</span>
+            </TypeBox>
+          </UserTypeContainer>
+          {
+            isPlanActive &&
+            <FormBox>
+              <select onChange={event => setPlan(event.target.value)}>
+                <option value="hapvida">Hapvida</option>
+                <option value="unimed">Unimed</option>
+              </select>
+            </FormBox>
+          }
+          <button type="submit">
+            Cadastrar
         </button>
-      </Container>
+        </Container>
+      </AnimationContainer>
     </Modal>
   )
 }
