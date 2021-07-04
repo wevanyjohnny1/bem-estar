@@ -8,53 +8,6 @@ const travelOne = keyframes`
   }
 `;
 
-const travelTwo = keyframes`
-  from {
-    transform: translateX(-70px);
-    opacity: 1;
-  } to {
-    transform: translateX(1700px);
-    opacity: 0;
-  }
-`;
-
-const travelThree = keyframes`
-  from {
-    transform: translateX(-70px);
-    opacity: 1;
-  } to {
-    transform: translateX(1700px);
-    opacity: 0;
-`;
-
-const travelFour = keyframes`
-  from {
-    transform: translateX(1700px);
-    opacity: 1;
-  } to {
-    transform: translateX(-70px);
-    opacity: 0;
-`;
-
-const travelFive = keyframes`
-  from {
-    transform: translateX(1800px);
-    opacity: 1;
-  } to {
-    transform: translateX(-70px);
-    opacity: 0;
-  }
-`;
-
-const travelSix = keyframes`
-  from {
-    transform: translateX(1800px);
-    opacity: 1;
-  } to {
-    transform: translateX(-70px);
-    opacity: 0;
-`;
-
 export const Container = styled.header`
   background: var(--background);
 
@@ -69,60 +22,7 @@ export const Container = styled.header`
     animation: ${travelOne} 20s linear infinite;
     }
 
-    .cloudTwo {
-    position: absolute;
-    height: 7rem;
-    width: 7rem;
-    margin: 4rem 4rem;
-
-    color: var(--cloud);
-
-    animation: ${travelTwo} 25s linear infinite;
-    }
-
-    .cloudThree {
-    position: absolute;
-    height: 2rem;
-    width: 2rem;
-    margin: 4rem 4rem;
-
-    color: var(--cloud);
-
-    animation: ${travelThree} 30s linear infinite;
-  }
-
-  .cloudFour {
-    position: absolute;
-    height: 7rem;
-    width: 7rem;
-    margin: 4rem 4rem;
-
-    color: var(--cloud);
-
-    animation: ${travelFour} 25s linear infinite;
-  }
-
-  .cloudFive {
-    position: absolute;
-    height: 2rem;
-    width: 2rem;
-    margin: 4rem 4rem;
-
-    color: var(--cloud);
-
-    animation: ${travelFive} 20s linear infinite;
-  }
-
-  .cloudSix {
-    position: absolute;
-    height: 2rem;
-    width: 2rem;
-    margin: 4rem 4rem;
-
-    color: var(--cloud);
-
-    animation: ${travelSix} 30s linear infinite;
-  }
+    
 `;
 
 export const LogoBox = styled.div`

@@ -28,11 +28,6 @@ export function Header() {
   return (
     <Container>
       <BsCloud className="cloudOne" />
-      <BsCloud className="cloudTwo" />
-      <BsCloud className="cloudThree" />
-      <BsCloud className="cloudFour" />
-      <BsCloud className="cloudFive" />
-      <BsCloud className="cloudSix" />
       <Content>
         <LogoBox>
           <h3>Clínica Laboratório</h3>
