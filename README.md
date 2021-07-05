@@ -1,3 +1,6 @@
+## Demo
+
+![Demo](https://media.giphy.com/media/AalSTqSZ7vAR0vosWc/giphy.gif)
 
 ## Start Development Environment
 
