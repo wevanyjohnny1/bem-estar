@@ -1,6 +1,6 @@
 ## Demo
 
-![Demo](https://media.giphy.com/media/AalSTqSZ7vAR0vosWc/giphy.gif)
+![Demo](https://im5.ezgif.com/tmp/ezgif-5-2e394414ed83.gif)
 
 ## Start Development Environment
 
