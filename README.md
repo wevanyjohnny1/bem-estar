@@ -1,6 +1,3 @@
-## Demo
-
-![Demo](https://im5.ezgif.com/tmp/ezgif-5-2e394414ed83.gif)
 
 ## Start Development Environment
 
